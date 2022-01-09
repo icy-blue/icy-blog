@@ -649,6 +649,8 @@ libs:
     codelang: /libs/codeBlock/codeLang.js
     codecopy: /libs/codeBlock/codeCopy.js
     codeshrink: /libs/codeBlock/codeShrink.js
+    packery: /libs/others/packery.pkgd.min.js
+    draggabilly: /libs/others/draggabilly.pkgd.min.js
 
 # 无文章特色图片时需要显示的文章特色图片.
 featureImages:
