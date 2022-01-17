@@ -29,7 +29,7 @@ jobs:
         run: |
           npm update npm
           npm i -g @lint-md/cli
-          npm i -g @lint-md/cli
+          npm i -g @lint-md/cores
         
       - name: Fix format of markdown sources
         run: |
