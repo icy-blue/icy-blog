@@ -39,8 +39,7 @@ jobs:
         
       - name: Fix format of markdown sources
         run: |
-          find ./source/ -name "*.md"
-          find ./source/ -name "*.md" | lint-md --fix 
+          find ./source/ -name "*.md" | xargs lint-md --fix 
       
       - name: Commit the fix
         run: |
