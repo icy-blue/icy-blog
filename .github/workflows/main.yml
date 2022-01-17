@@ -30,24 +30,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12'
-          
-      - name: Import lint-md
-        run: |
-          npm update npm
-          npm i -g @lint-md/cli
-          npm i -g @lint-md/cli
-        
-      - name: Fix format of markdown sources
-        run: |
-          find ./source/ -name "*.md" | xargs lint-md --fix 
-      
-      - name: Commit the fix
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add --all
-          git commit -m "Fix format of markdown sources."
-          git push
 
       - name: Setup Hexo
         env:
