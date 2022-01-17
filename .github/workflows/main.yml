@@ -24,7 +24,7 @@ jobs:
         run: sudo timedatectl set-timezone 'Asia/Shanghai'
 
       - name: Checkout source
-        uses: actions/checkout@latest
+        uses: actions/checkout@v2.4.0
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
