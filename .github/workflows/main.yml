@@ -33,6 +33,7 @@ jobs:
           
       - name: Fix format of markdown sources
         run: |
+          npm update npm
           npm i -g @lint-md/cli
           find ./source/ -name "*.md" | lint-md --fix 
       
