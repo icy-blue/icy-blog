@@ -44,6 +44,7 @@ jobs:
           git push
 
   build:
+    needs: format
     runs-on: ubuntu-latest
 
     steps:
