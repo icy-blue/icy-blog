@@ -31,10 +31,15 @@ jobs:
         with:
           node-version: '12'
           
-      - name: Fix format of markdown sources
+      - name: Import lint-md
         run: |
           npm update npm
           npm i -g @lint-md/cli
+          npm i -g @lint-md/cli
+        
+      - name: Fix format of markdown sources
+        run: |
+          find ./source/ -name "*.md" | echo "mds:" 
           find ./source/ -name "*.md" | lint-md --fix 
       
       - name: Commit the fix
