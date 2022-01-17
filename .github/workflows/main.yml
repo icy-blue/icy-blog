@@ -24,12 +24,26 @@ jobs:
         run: sudo timedatectl set-timezone 'Asia/Shanghai'
 
       - name: Checkout source
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@latest
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: '12'
+          
+      - name: Fix format of markdown sources
+        run: |
+          npm i -g @lint-md/core
+          npm i -g @lint-md/cli
+          find ./source/ -name "*.md" | lint-md --fix 
+      
+      - name: Commit the fix
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add --all
+          git commit -m "Fix format of markdown sources."
+          git push
 
       - name: Setup Hexo
         env:
