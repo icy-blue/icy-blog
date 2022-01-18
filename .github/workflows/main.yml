@@ -62,12 +62,22 @@ jobs:
           node-version: '12'
 
       - name: Setup Hexo
-        env:
-          ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_KEY }}
         run: |
           npm install hexo-cli -g
           npm install hexo-deployer-git --save
           npm install
+        
+      - name: Setup Git
+        env:
+          ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 700 ~/.ssh
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.email "i@icys.top"
+          git config --global user.name "icy-blue"
 
       - name: Deploy
         run: |
