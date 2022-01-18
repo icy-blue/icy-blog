@@ -81,6 +81,15 @@ jobs:
 
       - name: Deploy
         run: |
+          cat >> _config.yml <<EOF
+
+# 自动部署配置
+deploy:
+  type: git
+  repo: git@github.com:icy-blue/icy-blue.github.io.git
+  branch: hexo
+
+EOF
           hexo clean
           hexo deploy
  
@@ -121,8 +130,15 @@ jobs:
 
       - name: Deploy
         run: |
-          rm -f _config.yml
-          mv _config2.yml _config.yml
+          cat >> _config.yml <<EOF
+
+# 自动部署配置
+deploy:
+  type: git
+  repo: git@gitee.com:icy-blue/icy-blue.gitee.io.git
+  branch: hexo
+
+EOF
           hexo clean
           hexo deploy
           hexo deploy

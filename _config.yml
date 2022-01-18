@@ -390,12 +390,6 @@ sitemap:
 # 百度搜索资源平台提交链接
 baiduPush: true
 
-# 自动部署配置
-deploy:
-  type: git
-  repo: git@github.com:icy-blue/icy-blue.github.io.git
-  branch: hexo
-
 # ------------------------- 博客评论模块配置 -------------------------
 # Gitalk 评论模块的配置，默认为不激活
 gitalk:
