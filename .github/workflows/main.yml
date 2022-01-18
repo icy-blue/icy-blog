@@ -83,13 +83,13 @@ jobs:
         run: |
           cat >> _config.yml <<EOF
 
-# 自动部署配置
-deploy:
-  type: git
-  repo: git@github.com:icy-blue/icy-blue.github.io.git
-  branch: hexo
+          # 自动部署配置
+          deploy:
+            type: git
+            repo: git@github.com:icy-blue/icy-blue.github.io.git
+            branch: hexo
 
-EOF
+          EOF
           hexo clean
           hexo deploy
  
@@ -132,13 +132,13 @@ EOF
         run: |
           cat >> _config.yml <<EOF
 
-# 自动部署配置
-deploy:
-  type: git
-  repo: git@gitee.com:icy-blue/icy-blue.gitee.io.git
-  branch: hexo
+          # 自动部署配置
+          deploy:
+            type: git
+            repo: git@gitee.com:icy-blue/icy-blue.gitee.io.git
+            branch: hexo
 
-EOF
+          EOF
           hexo clean
           hexo deploy
           hexo deploy
