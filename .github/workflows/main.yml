@@ -44,7 +44,7 @@ jobs:
           git commit -m "Fix format of markdown sources."
           git push
 
-  deploy-hexo:
+  deploy-github:
     needs: lint-format
     runs-on: ubuntu-latest
 
@@ -65,6 +65,45 @@ jobs:
         env:
           ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_KEY }}
         run: |
+          mkdir -p ~/.ssh/
+          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 700 ~/.ssh
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.email "i@icys.top"
+          git config --global user.name "icy-blue"
+          npm install hexo-cli -g
+          npm install hexo-deployer-git --save
+          npm install
+
+      - name: Deploy
+        run: |
+          hexo clean
+          hexo deploy
+ 
+  deploy-gitee:
+    needs: lint-format
+    runs-on: ubuntu-latest
+
+    steps:
+        # 设置服务器时区为东八区 
+      - name: Set time zone
+        run: sudo timedatectl set-timezone 'Asia/Shanghai'
+
+      - name: Checkout source
+        uses: actions/checkout@v2.4.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+
+      - name: Setup Hexo
+        env:
+          ACTION_DEPLOY_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
+        run: |
+          rm -f _config.yml
+          mv _config2.yml _config.yml
           mkdir -p ~/.ssh/
           echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
           chmod 700 ~/.ssh
