@@ -1,12 +1,12 @@
 User-agent: *
 Allow: /
 Allow: /posts/
-Disallow: /tags/
-Disallow: /categories/
-Disallow: /archives/
-Disallow: /about/
+Allow: /tags/
+Allow: /categories/
+Allow: /archives/
+Allow: /about/
 Disallow: /contact/
-Disallow: /friends/
+Allow: /friends/
 Disallow: /movies/
 Disallow: /books/
 Disallow: /page/
