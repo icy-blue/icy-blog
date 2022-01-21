@@ -1,5 +1,5 @@
 ---
-title: 基于 GitHub Actions + 宝塔 + 阿里云全站加速的 Hexo 博客配置
+title: 基于 GitHub Actions + 宝塔 + DCDN 的 Hexo 博客配置
 author: icy
 top: false
 cover: false
@@ -12,14 +12,12 @@ tags:
   - 博客
   - 宝塔
   - 全站加速
-summary: 不知不觉博客已经开启接近两年了，一直以来本站使用的技术是阿里云全站加速+GitHub Pages 的部署方式。不过由于国内 CDN 回源 Pages 服务器还是存在着连接质量差的问题，在两周年之际，本站使用了基于 GitHub Actions + 宝塔 + 阿里云全站加速的搭建模式。
+summary: 不知不觉博客已经开启接近两年了，一直以来本站使用的技术是阿里云全站加速 + GitHub Pages 的部署方式。不过由于国内 CDN 回源 Pages 服务器还是存在着连接质量差的问题，在两周年之际，本站使用了基于 GitHub Actions + 宝塔 + 阿里云全站加速的搭建模式。
 date: 2022-01-21 12:00:00
 img:
 coverImg:
 password:
 ---
-
-# 基于 GitHub Actions + 宝塔 + 阿里云全站加速的 Hexo 博客配置
 
 不知不觉博客已经开启接近两年了，一直以来本站使用的技术是阿里云全站加速+GitHub Pages 的部署方式。不过由于国内 CDN 回源 Pages 服务器还是存在着连接质量差的问题，在两周年之际，本站使用了基于 GitHub Actions + 宝塔 + 阿里云全站加速的搭建模式。
 
@@ -64,9 +62,9 @@ GitHub Pages 可以满足绝大多数海外用户的使用需求，因为 Pages 
 
 既然使用国内 CDN 了，何不直接使用国内的服务器呢~
 
-在 2021 年双十一期间，腾讯云打出了 2 核 4GB 8Mbps 月流量 1200GB 的轻量应用服务器一年 70 元、三年 198 元的活动，吸引了许多建站开发者。按购买 3 年计算，月均消费 5.5 元，是非常适合学生党“折腾”的。
+在 2021 年双十一期间~~（活动已结束，价格供参考）~~，腾讯云打出了 2 核 4GB 8Mbps 月流量 1200GB 的轻量应用服务器一年 70 元、三年 198 元的活动，吸引了许多建站开发者。按购买 3 年计算，月均消费 5.5 元，是非常适合学生党“折腾”的。
 
-<img src="../images/2022012103.png" style="zoom: 67%;" />
+<img src="../images/2022012103.png" alt="腾讯云 2021 年双十一活动界面" style="zoom: 67%;" />
 
 一般来说，我们的代码编辑仍然还是在自己的电脑上，而服务器仅仅是对于 Hexo 生成的静态文件的展示（一般来说不会在服务器上使用 Node.js 展示 Hexo 服务，因为对于静态网站，在线解析生成其实是一种浪费）。此时我们其实就可以使用上面所说的`hexo d`命令，把静态网站部署到`Gitee`上（因为服务器去访问 GitHub 还是非常困难的），然后在服务器上同步拉取即可。
 
@@ -80,4 +78,64 @@ git pull
 
 由于 Hexo 的部署是强制推送，不存储过往的界面，以减少整个仓库的大小，我们在拉取仓库的时候使用强制覆盖本地仓库的方式进行更新。考虑到 SSH 会话运行的程序在 SSH 连接断开后不太稳定，我们可以使用终端复用器 Tmux(terminal multiplexer)，使得脚本在后台使用。
 
+关于Tmux，在[阮一峰博客](https://www.ruanyifeng.com/blog/2019/10/tmux.html)那里有一个很好的介绍，我们可以通过`tmux new -s <session-name>`创建一个新的会话，然后在会话里运行Python脚本，一个简单的Python脚本可能像这样：
+
+```python
+import os
+import time
+import threading
+while True:
+    time.sleep(60) # 60 seconds
+    os.system("git fetch --all")
+    os.system("git reset --hard origin/master")
+    os.system("git pull")
+```
+
+当然读者也可以通过写bash脚本解决问题。我们在刚刚建立的session中运行脚本后关闭SSH会话或按下`Ctrl + B d`将会话切回到后台，即可实现脚本的后台运行。
+
+## WebHook
+
+循环拉取仓库好像挺傻的，不美观，那能不能让仓库主动去推送更新消息呢？WebHook可以帮助我们了解这样的信息。
+
+WebHook是一种API概念，当仓库有变动时（新Push、新PR、新Issue等等），代码托管平台会给仓库预留的链接发送POST请求。我们一般在服务器的某个端口，监听这类的POST请求（用Node.js、Python等程序可以很快地编写一个监听POST请求的Server，Python + Flask的实现可以参考[python+flask：实现POST接口功能](https://www.cnblogs.com/Alin-2016/p/7422987.html)，Go语言可以参考[GO接收GET/POST参数以及发送GET/POST请求](https://blog.csdn.net/qq_27312939/article/details/110632297)，Node.js可以参考[【node.js】处理前端提交的POST请求](https://blog.csdn.net/w390058785/article/details/79770540)，其他语言不再列举）。根据[GitHub](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads)和[Gitee](https://gitee.com/help/articles/4271)的文档，我们可以在服务器上解析平台上发生的事件，并进行一定的处理。
+
+以监测平台有新提交自动拉取代码这个需求来说，我们可以设置相关的触发器，设置相关的钩子地址，并设置鉴权（以免其他用户滥发），当代码托管平台的仓库有了新提交，我们的服务器则会收到POST消息，以便实现。
+
+作为POST的回应，建议在服务器上回复JSON，并设置`HTTP status 200`，以免部分平台认定推送失败。
+
+## 宝塔的WebHook
+
+不愿意自己写代码监听？宝塔软件商店里的`宝塔WebHook`可以帮你实现WebHook的接收。
+
+在宝塔的软件商店中，搜索`WebHook`，找到`宝塔WebHook`，便可以在里面添加钩子。
+
+<img src="../images/2022012104.png" alt="宝塔 WebHook 界面" style="zoom: 80%;" />
+
+添加完后，我们可以看到自己添加钩子的情况，包括钩子名称、添加时间、近期调用、调用次数等信息。我们还可以查看密钥查看钩子的密钥，以便鉴权。在查看密钥的界面，宝塔提供了一个示例的链接，其中参数包括密钥和脚本参数，我们可以按需进行调整，并把最后的链接放在代码仓库-设置-WebHook的相应位置（由于我们的鉴权密钥在URL的参数上，所以对于GitHub和Gitee来说，密码处可以随便写）。
+
+![宝塔WebHook界面](../images/2022012105.png)
+
+![宝塔WebHook查看密钥界面](../images/2022012106.png)
+
+下面是GitHub和Gitee的WebHook设置示例：
+
+<img src="../images/2022012107.png" alt="GItHub的WebHook设置示例" style="zoom: 50%;" />
+
+<img src="../images/2022012108.png" alt="Gitee的WebHook设置示例" style="zoom:50%;" />
+
+做到这里，我们就可以让服务器自动跟进代码仓库的更新了。
+
+## 使用 GitHub Actions 实现静态界面的生成
+
+每次我们发现，自己的静态界面确实已经保存在代码仓库中了，而原始文件却没能保存。有的朋友会选择再建一个仓库专门提交原始文件，先提交静态界面，再提交原始文件，提交两次可能总是会遗漏，那有没有只提交一次的办法呢？
+
+答案自然是肯定的，我们可以通过使用 GitHub Actions 实现静态界面的生成。
+
 【未完待续】
+
+## 使用 GitHub Actions 实现仓库从 GitHub 到 Gitee 的同步
+
+## 使用 Gitee Pages
+
+## 做一个合适的负载均衡
+
