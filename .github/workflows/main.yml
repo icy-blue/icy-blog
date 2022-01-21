@@ -76,6 +76,7 @@ jobs:
           chmod 700 ~/.ssh
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git pull
           git config --global user.email "i@icys.top"
           git config --global user.name "icy-blue"
 
@@ -125,6 +126,7 @@ jobs:
           chmod 700 ~/.ssh
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan gitee.com >> ~/.ssh/known_hosts
+          git pull
           git config --global user.email "i@icys.top"
           git config --global user.name "icy-blue"
 
