@@ -131,11 +131,94 @@ WebHook是一种API概念，当仓库有变动时（新Push、新PR、新Issue�
 
 答案自然是肯定的，我们可以通过使用 GitHub Actions 实现静态界面的生成。
 
-【未完待续】
+下面是一个简单的配置文件，修改用户名邮箱等信息后，将其放在原始博客仓库的`.github/workflows/`内，以yml格式为文件名后缀，配置就已经部署好了——吗？
 
-## 使用 GitHub Actions 实现仓库从 GitHub 到 Gitee 的同步
+```yaml
+name: Hexo Deploy
 
-## 使用 Gitee Pages
+on:
+  # 如果你的默认 branch 是 master，将下面的 main 改为 master
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
 
-## 做一个合适的负载均衡
+jobs:
+  deploy-github:
+    runs-on: ubuntu-latest
 
+    steps:
+        # 设置服务器时区为东八区 
+      - name: Set time zone
+        run: sudo timedatectl set-timezone 'Asia/Shanghai'
+
+      - name: Checkout source
+        uses: actions/checkout@v2.4.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+
+      - name: Setup Hexo
+        run: |
+          npm install hexo-cli -g
+          npm install hexo-deployer-git --save
+          npm install
+        
+      - name: Setup Git
+        env:
+          ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 700 ~/.ssh
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git pull
+          git config --global user.email "<email>"
+          git config --global user.name "<username>"
+
+		# 如果在自己的_config.yml已配置，则直接运行最后两条命令即可
+      - name: Deploy
+        run: |
+          cat >> _config.yml <<EOF
+
+          # 自动部署配置
+          deploy:
+            type: git
+            repo: git@github.com:<username>/<username>.github.io.git
+            branch: hexo
+
+          EOF
+          hexo clean
+          hexo deploy
+```
+
+去部署一个仓库，我们当然是要提供一些权限让它有权更改目的仓库，我们到目的仓库`<username>.github.io`的设置界面，找到`Deploy keys`后在右上角添加一对公钥（为了避免后期权限混乱的麻烦，建议新建一对新的公钥私钥对，公钥私钥的生成方式可以参考[Gitee的帮助文档](https://gitee.com/help/articles/4181)），将公钥放在`Key`区域，标题任取即可，**注意勾选`Allow write access`，否则仅有只读权限，仍然无法部署。**
+
+![添加仓库部署可信公钥](../images/2022012109.png)
+
+现在目的仓库就认可了这个公钥，接下来我们要把私钥交给源仓库。直接放在仓库内是不保险的，因为我们clone了这个仓库就可以看到私钥明文，即便是私有仓库但是如果存储该仓库的主机被攻破，仍然可以得到私钥的明文。因此我们应该放在一个更加合适的位置，就比如仓库设置中的`Secret`区域。
+
+![仓库 Secret 区](../images/2022012110.png)
+
+我们在右上角添加新密钥，命名为`HEXO_DEPLOY_KEY`（如修改需要同步修改上面yml文件的名称）。密钥粘贴时，需将`-----BEGIN OPENSSH PRIVATE KEY-----`之类的标识行一同复制，在`-----END OPENSSH PRIVATE KEY-----`后最好换一行（即光标在密钥下一行）。
+
+**请注意，密钥写入后无法查看，只能覆盖，如丢失需要重新生成公钥私钥对。**
+
+![](../images/2022012111.png)
+
+此时，用于部署的仓库就有了部署权限，在每次用户的Push操作和PR操作后，可以把生成的静态目录推送的目标仓库了。
+
+## 放在最后
+
+篇幅有点长了，剩下的当作下期预告吧——
+
+-  使用 GitHub Actions 实现仓库从 GitHub 到 Gitee 的同步
+
+-  使用 Gitee Pages
+
+- 做一个合适的负载均衡
+- 使用 Lint-md 让博客内容排版更加规范
