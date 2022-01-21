@@ -78,7 +78,7 @@ git pull
 
 由于 Hexo 的部署是强制推送，不存储过往的界面，以减少整个仓库的大小，我们在拉取仓库的时候使用强制覆盖本地仓库的方式进行更新。考虑到 SSH 会话运行的程序在 SSH 连接断开后不太稳定，我们可以使用终端复用器 Tmux(terminal multiplexer)，使得脚本在后台使用。
 
-关于Tmux，在[阮一峰博客](https://www.ruanyifeng.com/blog/2019/10/tmux.html)那里有一个很好的介绍，我们可以通过`tmux new -s <session-name>`创建一个新的会话，然后在会话里运行Python脚本，一个简单的Python脚本可能像这样：
+关于 Tmux，在[阮一峰博客](https://www.ruanyifeng.com/blog/2019/10/tmux.html)那里有一个很好的介绍，我们可以通过`tmux new -s <session-name>`创建一个新的会话，然后在会话里运行 Python 脚本，一个简单的 Python 脚本可能像这样：
 
 ```python
 import os
@@ -91,33 +91,33 @@ while True:
     os.system("git pull")
 ```
 
-当然读者也可以通过写bash脚本解决问题。我们在刚刚建立的session中运行脚本后关闭SSH会话或按下`Ctrl + B d`将会话切回到后台，即可实现脚本的后台运行。
+当然读者也可以通过写 bash 脚本解决问题。我们在刚刚建立的 session 中运行脚本后关闭 SSH 会话或按下`Ctrl + B d`将会话切回到后台，即可实现脚本的后台运行。
 
 ## WebHook
 
-循环拉取仓库好像挺傻的，不美观，那能不能让仓库主动去推送更新消息呢？WebHook可以帮助我们了解这样的信息。
+循环拉取仓库好像挺傻的，不美观，那能不能让仓库主动去推送更新消息呢？WebHook 可以帮助我们了解这样的信息。
 
-WebHook是一种API概念，当仓库有变动时（新Push、新PR、新Issue等等），代码托管平台会给仓库预留的链接发送POST请求。我们一般在服务器的某个端口，监听这类的POST请求（用Node.js、Python等程序可以很快地编写一个监听POST请求的Server，Python + Flask的实现可以参考[python+flask：实现POST接口功能](https://www.cnblogs.com/Alin-2016/p/7422987.html)，Go语言可以参考[GO接收GET/POST参数以及发送GET/POST请求](https://blog.csdn.net/qq_27312939/article/details/110632297)，Node.js可以参考[【node.js】处理前端提交的POST请求](https://blog.csdn.net/w390058785/article/details/79770540)，其他语言不再列举）。根据[GitHub](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads)和[Gitee](https://gitee.com/help/articles/4271)的文档，我们可以在服务器上解析平台上发生的事件，并进行一定的处理。
+WebHook 是一种 API 概念，当仓库有变动时（新 Push、新 PR、新 Issue 等等），代码托管平台会给仓库预留的链接发送 POST 请求。我们一般在服务器的某个端口，监听这类的 POST 请求（用 Node.js、Python 等程序可以很快地编写一个监听 POST 请求的 Server，Python + Flask 的实现可以参考[python+flask：实现 POST 接口功能](https://www.cnblogs.com/Alin-2016/p/7422987.html)，Go 语言可以参考[GO 接收 GET/POST 参数以及发送 GET/POST 请求](https://blog.csdn.net/qq_27312939/article/details/110632297)，Node.js 可以参考[【node.js】处理前端提交的 POST 请求](https://blog.csdn.net/w390058785/article/details/79770540)，其他语言不再列举）。根据[GitHub](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads)和[Gitee](https://gitee.com/help/articles/4271)的文档，我们可以在服务器上解析平台上发生的事件，并进行一定的处理。
 
-以监测平台有新提交自动拉取代码这个需求来说，我们可以设置相关的触发器，设置相关的钩子地址，并设置鉴权（以免其他用户滥发），当代码托管平台的仓库有了新提交，我们的服务器则会收到POST消息，以便实现。
+以监测平台有新提交自动拉取代码这个需求来说，我们可以设置相关的触发器，设置相关的钩子地址，并设置鉴权（以免其他用户滥发），当代码托管平台的仓库有了新提交，我们的服务器则会收到 POST 消息，以便实现。
 
-作为POST的回应，建议在服务器上回复JSON，并设置`HTTP status 200`，以免部分平台认定推送失败。
+作为 POST 的回应，建议在服务器上回复 JSON，并设置`HTTP status 200`，以免部分平台认定推送失败。
 
-## 宝塔的WebHook
+## 宝塔的 WebHook
 
-不愿意自己写代码监听？宝塔软件商店里的`宝塔WebHook`可以帮你实现WebHook的接收。
+不愿意自己写代码监听？宝塔软件商店里的`宝塔WebHook`可以帮你实现 WebHook 的接收。
 
 在宝塔的软件商店中，搜索`WebHook`，找到`宝塔WebHook`，便可以在里面添加钩子。
 
 <img src="../images/2022012104.png" alt="宝塔 WebHook 界面" style="zoom: 80%;" />
 
-添加完后，我们可以看到自己添加钩子的情况，包括钩子名称、添加时间、近期调用、调用次数等信息。我们还可以查看密钥查看钩子的密钥，以便鉴权。在查看密钥的界面，宝塔提供了一个示例的链接，其中参数包括密钥和脚本参数，我们可以按需进行调整，并把最后的链接放在代码仓库-设置-WebHook的相应位置（由于我们的鉴权密钥在URL的参数上，所以对于GitHub和Gitee来说，密码处可以随便写）。
+添加完后，我们可以看到自己添加钩子的情况，包括钩子名称、添加时间、近期调用、调用次数等信息。我们还可以查看密钥查看钩子的密钥，以便鉴权。在查看密钥的界面，宝塔提供了一个示例的链接，其中参数包括密钥和脚本参数，我们可以按需进行调整，并把最后的链接放在代码仓库-设置-WebHook 的相应位置（由于我们的鉴权密钥在 URL 的参数上，所以对于 GitHub 和 Gitee 来说，密码处可以随便写）。
 
 ![宝塔WebHook界面](../images/2022012105.png)
 
 ![宝塔WebHook查看密钥界面](../images/2022012106.png)
 
-下面是GitHub和Gitee的WebHook设置示例：
+下面是 GitHub 和 Gitee 的 WebHook 设置示例：
 
 <img src="../images/2022012107.png" alt="GItHub的WebHook设置示例" style="zoom: 50%;" />
 
