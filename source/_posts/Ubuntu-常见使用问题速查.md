@@ -114,12 +114,14 @@ password:
   - Nano
     - [Linux nano 命令用法详解](https://ipcmen.com/nano)
     - Nano 保存等怎么操作在界面上都写着，很方便
-
 - [宝塔 Linux 面板安装教程](https://www.bt.cn/bbs/thread-19376-1-1.html)
 - [怎样在 Ubuntu Linux 上安装 MySQL](https://zhuanlan.zhihu.com/p/64080934)
 - [如何在 Ubuntu 20.04 上安装 Nginx](https://developer.aliyun.com/article/759280)
 - [Ubuntu 下安装 Anaconda 的步骤](https://zhuanlan.zhihu.com/p/426655323)
 - [Ubuntu 搭建 Ftp 服务器](https://www.cnblogs.com/oukele/p/11452651.html)
+- [Linux cd 命令 cd、 cd ~、cd /、cd../、cd /home 讲解](https://blog.csdn.net/bk_hyj/article/details/94629845)
+- [Linux 黑话解释：什么是 sudo rm -rf？为什么如此危险？](https://linux.cn/article-13813-1.html)
+- [Linux中的Diff和Patch](https://www.cnblogs.com/cocowool/p/6409643.html)
 
 ## 常见问题
 
@@ -128,10 +130,9 @@ password:
 - [Linux 用户及权限管理](https://www.cnblogs.com/fengdejiyixx/p/10773731.html)
   - 修改文件所有、设置权限、二进制权限、掩码
 - [Linux 软连接和硬链接](https://zhuanlan.zhihu.com/p/67366919)
-- [Linux cd 命令 cd、 cd ~、cd /、cd../、cd /home 讲解](https://blog.csdn.net/bk_hyj/article/details/94629845)
-- [Linux 黑话解释：什么是 sudo rm -rf？为什么如此危险？](https://linux.cn/article-13813-1.html)
 - [linux 如何修改文件名？](https://www.php.cn/linux-417155.html)
 - [Linux 学习 28-linux 一行命令杀掉指定名称进程（killall 、kill 、pkill）](https://www.cnblogs.com/yoyoketang/p/12804933.html)
 - [Linux Shell 编程](https://blog.csdn.net/nanfeibuyi/article/details/92400242)
 - [Ubuntu 修改系统时间](https://www.jianshu.com/p/a6a6dde68b91)
 - [Ubuntu 分辨率设置](https://blog.csdn.net/post_mans/article/details/80966589)
+- [linux 磁盘挂载](https://zhuanlan.zhihu.com/p/90100140)
