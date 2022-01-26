@@ -62,76 +62,76 @@ password:
 - [下载 VMware Workstation Pro](https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html)
   - 由于版权问题，本文并不展示激活码，请大家自行购买或者使用其他方式获取。
 - [VMware Workstation Pro 16 安装 Ubuntu 20.04](https://blog.csdn.net/qq_45642410/article/details/113756950)
-- 简易安装：[虚拟机（VMware Workstation）安装Ubuntu简易安装](https://blog.csdn.net/davidhzq/article/details/102575343)
+- 简易安装：[虚拟机（VMware Workstation）安装 Ubuntu 简易安装](https://blog.csdn.net/davidhzq/article/details/102575343)
   - 简易安装的缺点：无法在安装时换源、安装完没有中文语言，不过操作简单
-- 普通安装：[2021安装Vmware和Ubuntu教程](https://zhuanlan.zhihu.com/p/426795684)
-- [如何在VMWare的Ubuntu虚拟机中设置共享文件夹](https://blog.csdn.net/klq6743/article/details/78838080)
-- [【Ubuntu疑难杂症】虚拟机复制粘贴、文件夹共享及全屏效果](https://blog.csdn.net/LvzJason/article/details/122656856)
+- 普通安装：[2021 安装 Vmware 和 Ubuntu 教程](https://zhuanlan.zhihu.com/p/426795684)
+- [如何在 VMWare 的 Ubuntu 虚拟机中设置共享文件夹](https://blog.csdn.net/klq6743/article/details/78838080)
+- [【Ubuntu 疑难杂症】虚拟机复制粘贴、文件夹共享及全屏效果](https://blog.csdn.net/LvzJason/article/details/122656856)
 - 至于共享显卡来说，可能比较难，还是老老实实双系统罢。
-- [VMware中桥接模式，NAT，仅主机的区别](https://blog.csdn.net/qq_38916259/article/details/95650467)
-  - 推荐使用默认设置NAT，至于什么区别可以去看看，一般来说无需操作，可以去博客看看这三个模式有什么区别。
+- [VMware 中桥接模式，NAT，仅主机的区别](https://blog.csdn.net/qq_38916259/article/details/95650467)
+  - 推荐使用默认设置 NAT，至于什么区别可以去看看，一般来说无需操作，可以去博客看看这三个模式有什么区别。
 
 ### Virtual Box
 
-- [2021年全网最细 VirtualBox 虚拟机安装 Ubuntu 20.04.2.0 LTS及Ubuntu的相关配置](https://blog.csdn.net/xw1680/article/details/115434578)
+- [2021 年全网最细 VirtualBox 虚拟机安装 Ubuntu 20.04.2.0 LTS 及 Ubuntu 的相关配置](https://blog.csdn.net/xw1680/article/details/115434578)
 
 ### 其他
 
 - [鼠标如何从常见虚拟机中切出](https://blog.csdn.net/weixin_33953249/article/details/93116714)
   
-  > Virtual Box：右Ctrl
+  > Virtual Box：右 Ctrl
   >
   > VMware：Ctrl+Alt
   >
-  > KVM：右Ctrl+右Alt
+  > KVM：右 Ctrl+右 Alt
 
 ## 环境配置说明
 
 - [Ubuntu 设置中文界面](https://blog.csdn.net/weixin_45965432/article/details/115446648)
 - [Ubuntu 语言设置里简体中文是灰色的问题](https://blog.csdn.net/qq_42007712/article/details/82832725)
-- [Ubuntu安装中文输入法](https://zhuanlan.zhihu.com/p/111734450)
+- [Ubuntu 安装中文输入法](https://zhuanlan.zhihu.com/p/111734450)
 
 - [如何在 Ubuntu 服务器上安装桌面环境（GUI）](https://linux.cn/article-13408-1.html)
 
 ## 常见命令、工具
 
-- 包管理工具apt
-  - [Ubuntu的apt命令详解](https://www.cnblogs.com/hk-faith/p/8776471.html)
-  - [ubuntu /etc/apt/sources.list软件源格式说明](https://blog.csdn.net/unicorn_mitnick/article/details/89885848)
-  - [apt 和 apt-get的区别](https://blog.csdn.net/liudsl/article/details/79200134)
+- 包管理工具 apt
+  - [Ubuntu 的 apt 命令详解](https://www.cnblogs.com/hk-faith/p/8776471.html)
+  - [ubuntu /etc/apt/sources.list 软件源格式说明](https://blog.csdn.net/unicorn_mitnick/article/details/89885848)
+  - [apt 和 apt-get 的区别](https://blog.csdn.net/liudsl/article/details/79200134)
   - [Ubuntu 镜像源使用说明](https://mirrors.sdu.edu.cn/docs/guide/Ubuntu/)
 - [现可下载微软 Edge 的 Linux 稳定版了](https://linux.cn/article-13935-1.html)
 - 常见编辑器
   - Vim / Vi
-    - [vi 和vim 的区别](https://www.cnblogs.com/KiraEXA/p/5994078.html)
-    - [Vim：如何退出Vim编辑器？](https://blog.csdn.net/qq_43768851/article/details/121629428)
-    - [如何在Vim/Vi中保存文件并退出编辑器](https://www.myfreax.com/how-to-save-file-in-vim-quit-editor/)
-    - [VI/VIM提示没有权限保存时的解决方法](https://blog.csdn.net/benjamin_whx/article/details/43447519)
+    - [vi 和 vim 的区别](https://www.cnblogs.com/KiraEXA/p/5994078.html)
+    - [Vim：如何退出 Vim 编辑器？](https://blog.csdn.net/qq_43768851/article/details/121629428)
+    - [如何在 Vim/Vi 中保存文件并退出编辑器](https://www.myfreax.com/how-to-save-file-in-vim-quit-editor/)
+    - [VI/VIM 提示没有权限保存时的解决方法](https://blog.csdn.net/benjamin_whx/article/details/43447519)
 
   - Mousepad
-    - 有图形界面的文本编辑器，就像Windows下的notepad
+    - 有图形界面的文本编辑器，就像 Windows 下的 notepad
 
   - Nano
     - [Linux nano 命令用法详解](https://ipcmen.com/nano)
-    - Nano保存等怎么操作在界面上都写着，很方便
+    - Nano 保存等怎么操作在界面上都写着，很方便
 
-- [宝塔Linux面板安装教程](https://www.bt.cn/bbs/thread-19376-1-1.html)
+- [宝塔 Linux 面板安装教程](https://www.bt.cn/bbs/thread-19376-1-1.html)
 - [怎样在 Ubuntu Linux 上安装 MySQL](https://zhuanlan.zhihu.com/p/64080934)
 - [如何在 Ubuntu 20.04 上安装 Nginx](https://developer.aliyun.com/article/759280)
-- [Ubuntu下安装Anaconda的步骤](https://zhuanlan.zhihu.com/p/426655323)
+- [Ubuntu 下安装 Anaconda 的步骤](https://zhuanlan.zhihu.com/p/426655323)
 - [Ubuntu 搭建 Ftp 服务器](https://www.cnblogs.com/oukele/p/11452651.html)
 
 ## 常见问题
 
-- [Linux Shell管道详解](http://c.biancheng.net/view/3131.html)
+- [Linux Shell 管道详解](http://c.biancheng.net/view/3131.html)
 - [linux 如何查看端口被哪个进程占用？](https://blog.csdn.net/y805805/article/details/85857887)
-- [Linux用户及权限管理](https://www.cnblogs.com/fengdejiyixx/p/10773731.html)
+- [Linux 用户及权限管理](https://www.cnblogs.com/fengdejiyixx/p/10773731.html)
   - 修改文件所有、设置权限、二进制权限、掩码
-- [Linux软连接和硬链接](https://zhuanlan.zhihu.com/p/67366919)
-- [Linux cd命令cd、 cd ~、cd /、cd../、cd /home讲解](https://blog.csdn.net/bk_hyj/article/details/94629845)
+- [Linux 软连接和硬链接](https://zhuanlan.zhihu.com/p/67366919)
+- [Linux cd 命令 cd、 cd ~、cd /、cd../、cd /home 讲解](https://blog.csdn.net/bk_hyj/article/details/94629845)
 - [Linux 黑话解释：什么是 sudo rm -rf？为什么如此危险？](https://linux.cn/article-13813-1.html)
-- [linux如何修改文件名？](https://www.php.cn/linux-417155.html)
-- [Linux学习28-linux一行命令杀掉指定名称进程（killall 、kill 、pkill） ](https://www.cnblogs.com/yoyoketang/p/12804933.html)
-- [Linux Shell编程](https://blog.csdn.net/nanfeibuyi/article/details/92400242)
-- [Ubuntu修改系统时间](https://www.jianshu.com/p/a6a6dde68b91)
+- [linux 如何修改文件名？](https://www.php.cn/linux-417155.html)
+- [Linux 学习 28-linux 一行命令杀掉指定名称进程（killall 、kill 、pkill）](https://www.cnblogs.com/yoyoketang/p/12804933.html)
+- [Linux Shell 编程](https://blog.csdn.net/nanfeibuyi/article/details/92400242)
+- [Ubuntu 修改系统时间](https://www.jianshu.com/p/a6a6dde68b91)
 - [Ubuntu 分辨率设置](https://blog.csdn.net/post_mans/article/details/80966589)
