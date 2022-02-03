@@ -121,7 +121,7 @@ password:
 - [Ubuntu 搭建 Ftp 服务器](https://www.cnblogs.com/oukele/p/11452651.html)
 - [Linux cd 命令 cd、 cd ~、cd /、cd../、cd /home 讲解](https://blog.csdn.net/bk_hyj/article/details/94629845)
 - [Linux 黑话解释：什么是 sudo rm -rf？为什么如此危险？](https://linux.cn/article-13813-1.html)
-- [Linux中的Diff和Patch](https://www.cnblogs.com/cocowool/p/6409643.html)
+- [Linux 中的 Diff 和 Patch](https://www.cnblogs.com/cocowool/p/6409643.html)
 
 ## 常见问题
 
