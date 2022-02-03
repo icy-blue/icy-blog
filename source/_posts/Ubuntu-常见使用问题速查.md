@@ -136,3 +136,5 @@ password:
 - [Ubuntu 修改系统时间](https://www.jianshu.com/p/a6a6dde68b91)
 - [Ubuntu 分辨率设置](https://blog.csdn.net/post_mans/article/details/80966589)
 - [linux 磁盘挂载](https://zhuanlan.zhihu.com/p/90100140)
+- [Linux /dev目录详解和Linux系统各个目录的作用](https://blog.csdn.net/maopig/article/details/7195048)
+- [linux 命令中的大于号、小于号的作用](https://blog.csdn.net/a807719447/article/details/101548281)
