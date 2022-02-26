@@ -5,7 +5,7 @@ top: false
 cover: false
 mathjax: false
 toc: true
-abbrlink: 985211
+abbrlink: 202158988652
 categories: C++
 tags:
   - C++
@@ -121,3 +121,4 @@ int main() {
 C++11给的新特性真的很方便，比如可能大家常用的`auto`，比如大家可能用得到的智能指针`shared_ptr`，以及更好用的random `uniform_int_distribution` `uniform_real_distribution`，所以很多在线的考试、平台对C++11支持的很好。
 
 不过正是因为C++11满足了很多人的需求，这些平台对以后的C++14、C++17甚至C++20支持有限，因此很多人就没法享受到例如字符串分割、函数模板的推导、`optional`之类新特性带来的好处。新特性，是真的香啊~
+
