@@ -122,6 +122,7 @@ password:
 - [Linux cd 命令 cd、 cd ~、cd /、cd../、cd /home 讲解](https://blog.csdn.net/bk_hyj/article/details/94629845)
 - [Linux 黑话解释：什么是 sudo rm -rf？为什么如此危险？](https://linux.cn/article-13813-1.html)
 - [Linux 中的 Diff 和 Patch](https://www.cnblogs.com/cocowool/p/6409643.html)
+- [【推荐】ubuntu安装多版本python共存](https://blog.csdn.net/HD243608836/article/details/100162535)
 
 ## 常见问题
 
@@ -143,4 +144,8 @@ password:
   - 其实也可以使用图形界面改密码，不过密码太简单会不允许更改
 - [Linux给用户添加sudo权限](https://www.cnblogs.com/henrylinux/p/9746835.html)
 - [Linux 添加环境变量的五种方法](https://blog.csdn.net/u011262253/article/details/86083351)
+- [执行sudo命令时command not found的解决办法](https://www.jianshu.com/p/049f13e55840)
+- [Ubuntu 开机自动登录(命令行模式)](https://blog.csdn.net/weixin_43522563/article/details/91446518)
+  - 如果是有图形界面，在`Setting->User accounts`里面`enable`就行了
+
 
