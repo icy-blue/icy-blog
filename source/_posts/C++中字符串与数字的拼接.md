@@ -45,7 +45,7 @@ string str = "abc";
 string b = str + 1; // compile failure
 
 string str = "abc";
-string b = str + (char) 1; //compile successfully
+string b = str + (char) 1; // compile successfully
 ```
 
 由于自动的类型转换只能向上转（char -> int）而不能反向，所以编译是失败的，如果是引号的字符串呢？
@@ -62,7 +62,7 @@ cout << str << endl;
 
 可见，这个加数字其实意味着字符数组的偏移，与`string str = &"str" [1];`等价。在这种情况下，部分编译器会提 Warning，提醒用户这个加号并不是表示字符串的连接，防止用户受到 Java 影响误用。
 
-
+-----------------------------------
 
 **那如何实现字符串和数字的拼接呢？**
 
