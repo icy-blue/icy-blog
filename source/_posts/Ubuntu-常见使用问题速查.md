@@ -142,4 +142,5 @@ password:
 - [Linux passwd命令：修改用户密码](https://blog.csdn.net/hyfstyle/article/details/90904992)
   - 其实也可以使用图形界面改密码，不过密码太简单会不允许更改
 - [Linux给用户添加sudo权限](https://www.cnblogs.com/henrylinux/p/9746835.html)
+- [Linux 添加环境变量的五种方法](https://blog.csdn.net/u011262253/article/details/86083351)
 
