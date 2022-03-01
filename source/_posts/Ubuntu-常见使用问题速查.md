@@ -139,10 +139,10 @@ password:
 - [linux 磁盘挂载](https://zhuanlan.zhihu.com/p/90100140)
 - [Linux /dev 目录详解和 Linux 系统各个目录的作用](https://blog.csdn.net/maopig/article/details/7195048)
 - [linux 命令中的大于号、小于号的作用](https://blog.csdn.net/a807719447/article/details/101548281)
-- [Linux常见错误 “cp: omitting directory”解决办法](https://blog.csdn.net/qq_27278957/article/details/81188973)
-- [Linux passwd命令：修改用户密码](https://blog.csdn.net/hyfstyle/article/details/90904992)
+- [Linux 常见错误 “cp: omitting directory”解决办法](https://blog.csdn.net/qq_27278957/article/details/81188973)
+- [Linux passwd 命令：修改用户密码](https://blog.csdn.net/hyfstyle/article/details/90904992)
   - 其实也可以使用图形界面改密码，不过密码太简单会不允许更改
-- [Linux给用户添加sudo权限](https://www.cnblogs.com/henrylinux/p/9746835.html)
+- [Linux 给用户添加 sudo 权限](https://www.cnblogs.com/henrylinux/p/9746835.html)
 - [Linux 添加环境变量的五种方法](https://blog.csdn.net/u011262253/article/details/86083351)
 - [执行sudo命令时command not found的解决办法](https://www.jianshu.com/p/049f13e55840)
 - [Ubuntu 开机自动登录(命令行模式)](https://blog.csdn.net/weixin_43522563/article/details/91446518)
