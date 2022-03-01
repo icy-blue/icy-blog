@@ -97,7 +97,7 @@ password:
 
 - 包管理工具 apt
   - [Ubuntu 的 apt 命令详解](https://www.cnblogs.com/hk-faith/p/8776471.html)
-  - [ubuntu /etc/apt/sources.list 软件源格式说明](https://blog.csdn.net/unicorn_mitnick/article/details/89885848)
+  - [Ubuntu /etc/apt/sources.list 软件源格式说明](https://blog.csdn.net/unicorn_mitnick/article/details/89885848)
   - [apt 和 apt-get 的区别](https://blog.csdn.net/liudsl/article/details/79200134)
   - [Ubuntu 镜像源使用说明](https://mirrors.sdu.edu.cn/docs/guide/Ubuntu/)
 - [现可下载微软 Edge 的 Linux 稳定版了](https://linux.cn/article-13935-1.html)
@@ -122,23 +122,23 @@ password:
 - [Linux cd 命令 cd、 cd ~、cd /、cd../、cd /home 讲解](https://blog.csdn.net/bk_hyj/article/details/94629845)
 - [Linux 黑话解释：什么是 sudo rm -rf？为什么如此危险？](https://linux.cn/article-13813-1.html)
 - [Linux 中的 Diff 和 Patch](https://www.cnblogs.com/cocowool/p/6409643.html)
-- [【推荐】ubuntu 安装多版本 python 共存](https://blog.csdn.net/HD243608836/article/details/100162535)
+- [【推荐】Ubuntu 安装多版本 python 共存](https://blog.csdn.net/HD243608836/article/details/100162535)
 
 ## 常见问题
 
 - [Linux Shell 管道详解](http://c.biancheng.net/view/3131.html)
-- [linux 如何查看端口被哪个进程占用？](https://blog.csdn.net/y805805/article/details/85857887)
+- [Linux 如何查看端口被哪个进程占用？](https://blog.csdn.net/y805805/article/details/85857887)
 - [Linux 用户及权限管理](https://www.cnblogs.com/fengdejiyixx/p/10773731.html)
   - 修改文件所有、设置权限、二进制权限、掩码
 - [Linux 软连接和硬链接](https://zhuanlan.zhihu.com/p/67366919)
 - [linux 如何修改文件名？](https://www.php.cn/linux-417155.html)
-- [Linux 学习 28-linux 一行命令杀掉指定名称进程（killall 、kill 、pkill）](https://www.cnblogs.com/yoyoketang/p/12804933.html)
+- [Linux 学习 28-Linux 一行命令杀掉指定名称进程（killall 、kill 、pkill）](https://www.cnblogs.com/yoyoketang/p/12804933.html)
 - [Linux Shell 编程](https://blog.csdn.net/nanfeibuyi/article/details/92400242)
 - [Ubuntu 修改系统时间](https://www.jianshu.com/p/a6a6dde68b91)
 - [Ubuntu 分辨率设置](https://blog.csdn.net/post_mans/article/details/80966589)
-- [linux 磁盘挂载](https://zhuanlan.zhihu.com/p/90100140)
+- [Linux 磁盘挂载](https://zhuanlan.zhihu.com/p/90100140)
 - [Linux /dev 目录详解和 Linux 系统各个目录的作用](https://blog.csdn.net/maopig/article/details/7195048)
-- [linux 命令中的大于号、小于号的作用](https://blog.csdn.net/a807719447/article/details/101548281)
+- [Linux 命令中的大于号、小于号的作用](https://blog.csdn.net/a807719447/article/details/101548281)
 - [Linux 常见错误 “cp: omitting directory”解决办法](https://blog.csdn.net/qq_27278957/article/details/81188973)
 - [Linux passwd 命令：修改用户密码](https://blog.csdn.net/hyfstyle/article/details/90904992)
   - 其实也可以使用图形界面改密码，不过密码太简单会不允许更改
@@ -147,8 +147,8 @@ password:
 - [执行 sudo 命令时 command not found 的解决办法](https://www.jianshu.com/p/049f13e55840)
 - [Ubuntu 开机自动登录(命令行模式)](https://blog.csdn.net/weixin_43522563/article/details/91446518)
   - 如果是有图形界面，在`Setting->User accounts`里面`enable`就行了
-- 从 Windows 下解压压缩包或复制可执行文件后，在 linux 无法正常运行或运行报错
+- 从 Windows 下解压压缩包或复制可执行文件后，在 Linux 无法正常运行或运行报错
   - 一般来说是缺少可执行权限 x 权限，可以尝试`sudo chmod +x -R xxxx/`（如果希望递归添加），`sudo chmod +x xxxx`（仅文件或仅文件夹），成功后会让文件（夹）变绿，具体见下条帮助
 
-- [linux 的 ls 命令中文件颜色含义](https://www.cnblogs.com/DavidYan/articles/2476594.html)
+- [Linux 的 ls 命令中文件颜色含义](https://www.cnblogs.com/DavidYan/articles/2476594.html)
 
