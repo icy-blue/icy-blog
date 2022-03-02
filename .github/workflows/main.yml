@@ -38,8 +38,8 @@ jobs:
           
       - name: Commit the fix
         run: |
-          git config --global user.email "i@icys.top"
-          git config --global user.name "icy-blue"
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
           git add --all
           git commit -m "Fix format of markdown sources."
           git push
@@ -77,8 +77,8 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git pull
-          git config --global user.email "i@icys.top"
-          git config --global user.name "icy-blue"
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
 
       - name: Deploy
         run: |

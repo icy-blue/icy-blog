@@ -123,6 +123,7 @@ password:
 - [Linux 黑话解释：什么是 sudo rm -rf？为什么如此危险？](https://linux.cn/article-13813-1.html)
 - [Linux 中的 Diff 和 Patch](https://www.cnblogs.com/cocowool/p/6409643.html)
 - [【推荐】Ubuntu 安装多版本 python 共存](https://blog.csdn.net/HD243608836/article/details/100162535)
+- [Understanding the /etc/passwd File](https://www.geeksforgeeks.org/understanding-the-etc-passwd-file/)
 
 ## 常见问题
 
