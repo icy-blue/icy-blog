@@ -150,6 +150,8 @@ password:
   - 如果是有图形界面，在`Setting->User accounts`里面`enable`就行了
 - 从 Windows 下解压压缩包或复制可执行文件后，在 Linux 无法正常运行或运行报错
   - 一般来说是缺少可执行权限 x 权限，可以尝试`sudo chmod +x -R xxxx/`（如果希望递归添加），`sudo chmod +x xxxx`（仅文件或仅文件夹），成功后会让文件（夹）变绿，具体见下条帮助
-
 - [Linux 的 ls 命令中文件颜色含义](https://www.cnblogs.com/DavidYan/articles/2476594.html)
+- [在Linux后台运行脚本的方法和命令](https://blog.csdn.net/ruiyelp/article/details/80184249)
+- [Linux中&&、&、|、||等特殊符号](https://blog.csdn.net/bocai8058/article/details/82932397)
+- [如何更改 Ubuntu 的终端的字体和大小](https://linux.cn/article-13992-1.html)
 
