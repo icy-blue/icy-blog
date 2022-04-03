@@ -107,7 +107,7 @@ MC33的论文假设每个立方体的顶点不仅限于正负，可以使用三�
 
 其实这篇论文并没有对深度学习网络进行优化，更多的贡献在于架构了几何表达到网络输入输出的结构关系。
 
-<img src="../images/NMC/NMC-4.jpg" alt="在输入是voxel的情况下开启光滑性loss的对比" style="zoom: 30%;" />
+<img src="../images/NMC/NMC-4.jpg" alt="深度学习网络结构" style="zoom: 30%;" />
 
 - 网络：3D ResNet
 - Loss函数
