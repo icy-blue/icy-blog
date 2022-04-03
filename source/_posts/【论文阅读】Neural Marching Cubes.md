@@ -1,5 +1,5 @@
 ---
-title: Neural Marching Cubes
+title: Neural Marching Cubes: 基于 ResNet 的 Marching Cubes 算法
 author: icy
 top: false
 cover: false
@@ -16,8 +16,6 @@ img:
 coverImg:
 password:
 ---
-
-# Neural Marching Cubes ：基于 ResNet 的 Marching Cubes 算法
 
 这是SIGGRAPH Asia 2021 的论文，也是ACM Transaction of Graphics的论文。其实基础的MC算法也是图形学常用底层算法之一，研究研究也挺好的~
 
