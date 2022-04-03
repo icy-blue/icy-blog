@@ -1,5 +1,5 @@
 ---
-title: Neural Marching Cubes: 基于 ResNet 的 Marching Cubes 算法
+title: Neural Marching Cubes——基于 ResNet 的 Marching Cubes 算法
 author: icy
 top: false
 cover: false
