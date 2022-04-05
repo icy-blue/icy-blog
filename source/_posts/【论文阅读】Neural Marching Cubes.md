@@ -19,6 +19,8 @@ password:
 
 这是SIGGRAPH Asia 2021 的论文，也是ACM Transaction of Graphics的论文。其实基础的MC算法也是图形学常用底层算法之一，研究研究也挺好的~
 
+PPT：https://icys.top/reveal-0406/
+
 ## 起源——Marching Cubes
 
 说到Marching Cubes，朋友给我发了张图，表示这就是Marching Cubes（图片来自于YouTube Code Adventure频道）。
