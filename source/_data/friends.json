@@ -132,5 +132,12 @@
     "url": "https://stevebraveman.github.io/",
     "introduction": "任自己跌倒，站起来还是一样坚强勇敢。",
     "title": "Blog"
+  },
+  {
+    "name": "二哈",
+    "avatar": "/images/avatar/qugeek.jpg",
+    "url": "https://qugeek.com/blog/",
+    "introduction": "一只会飞的二哈",
+    "title": "二哈小站"
   }
 ]
