@@ -456,8 +456,8 @@ busuanziStatistics:
 
 # 添加 Google Analytics 配置
 googleAnalytics:
-  enable: false
-  id: GOOGLE_ID
+  enable: true
+  id: G-FXBDF3VDLG
 
 # 添加 Baidu Analytics 配置
 baiduAnalytics:
