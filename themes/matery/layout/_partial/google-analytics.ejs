@@ -1,5 +1,6 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXBDF3VDLG"></script>
+<% if (theme.googleAnalytics.enable) { %>
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%- theme.googleAnalytics.id %>"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
@@ -7,5 +8,6 @@
     }
 
     gtag('js', new Date());
-    gtag('config', 'G-FXBDF3VDLG');
+    gtag('config', '<%- theme.googleAnalytics.id %>');
 </script>
+<% } %>
