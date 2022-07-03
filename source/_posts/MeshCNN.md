@@ -5,7 +5,7 @@ top: false
 cover: false
 mathjax: true
 toc: true
-abbrlink: 25251320
+abbrlink: 25200156320
 categories: 论文
 tags:
   - 论文翻译
