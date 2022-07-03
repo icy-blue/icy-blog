@@ -1,5 +1,5 @@
 ---
-title: 论文翻译——MeshCNN:: A Network with an Edge
+title: 论文翻译——MeshCNN
 author: icy
 top: false
 cover: false
