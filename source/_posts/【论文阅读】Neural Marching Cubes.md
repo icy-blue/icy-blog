@@ -10,6 +10,7 @@ categories: 论文阅读
 tags:
   - 图形学
   - 论文阅读
+  - 论文
 summary: 基于 ResNet 的 Marching Cubes 算法
 date: 2022-04-02 19:00:00
 img:

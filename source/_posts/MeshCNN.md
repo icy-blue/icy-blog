@@ -1,3 +1,24 @@
+---
+title: 论文翻译——MeshCNN: A Network with an Edge
+author: icy
+top: false
+cover: false
+mathjax: true
+toc: true
+abbrlink: 25251320
+categories: 论文
+tags:
+  - 论文翻译
+  - 论文
+  - 图形学
+summary: 这是 CAD 五人组（好吧实际上四个人）完成的论文翻译。
+date: 2022-07-03 23:00:00
+img:
+coverImg:
+password:
+
+---
+
 # 论文翻译——MeshCNN: A Network with an Edge
 
 这是 CAD 五人组（好吧实际上四个人）完成的论文翻译，原论文 [MeshCNN: A Network with an Edge](https://arxiv.org/abs/1809.05910)，感谢 juraws, Gwyn, tk 三位朋友的一同协作。
