@@ -1,11 +1,11 @@
 ---
-title: 论文翻译——MeshCNN: A Network with an Edge
+title: 论文翻译——"MeshCNN: A Network with an Edge"
 author: icy
 top: false
 cover: false
 mathjax: true
 toc: true
-abbrlink: 25200156320
+abbrlink: 202207032321
 categories: 论文
 tags:
   - 论文翻译
