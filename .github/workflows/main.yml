@@ -78,6 +78,9 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
 
+      - name: Clean Images
+        run: rm source/images/ -rf
+
       - name: Deploy
         run: |
           cat >> _config.yml <<EOF
