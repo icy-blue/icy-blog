@@ -32,8 +32,7 @@
 						---
 						## Fast Forward
 						<video controls>
-							<!-- <source src="images/Forward.mkv" type="video/mp4" > -->
-							<source src="https://i-1254030284.cos.ap-shanghai.myqcloud.com/Forward.mkv" type="video/mp4" >
+							<source src="../images/Forward.mkv" type="video/mp4" >
 						</video>
 						
 						---
@@ -61,8 +60,8 @@
 							<li>Output: triangle mesh.</li>
 						</div>
 						<div style="left:40%;top: 75px;float: right;text-align: left;z-index:-10;width:35%;">
-							<img src="./images/MC.gif">
-							<img src="./images/MC-1.gif">
+							<img src="../images/MC.gif">
+							<img src="../images/MC-1.gif">
 						</div>
 					</section>
 					<section data-markdown>
@@ -70,14 +69,14 @@
 							## Marching Cubes Algorithm
 							- MC – 15 cases
 							<br/>
-							<img src="./images/MC15.png" alt="15种情况的MC算法" style="zoom: 75%;" />
+							<img src="../images/MC15.png" alt="15种情况的MC算法" style="zoom: 75%;" />
 							---
 							## Marching Cubes 33
-							<img src="./images/MC33-1.png" alt="左：孔洞问题；右：管道结构问题" style="zoom: 50%;" />
-							<img src="./images/MC33-2.png" alt="左：Ambiguous Face；右：Internal Ambiguity" style="zoom: 50%;" />
+							<img src="../images/MC33-1.png" alt="左：孔洞问题；右：管道结构问题" style="zoom: 50%;" />
+							<img src="../images/MC33-2.png" alt="左：Ambiguous Face；右：Internal Ambiguity" style="zoom: 50%;" />
 							---
 							## Marching Cubes 33
-							<img src="./images/MC33-3.png" alt="Marching Cubes 33" style="max-height: 55vh;" />
+							<img src="../images/MC33-3.png" alt="Marching Cubes 33" style="max-height: 55vh;" />
 						</textarea>
 					</section>
 				</section>
@@ -92,11 +91,11 @@
 							<small> Some algorithms from MC can recover sharp features, 
 								<br/> but they all require additional inputs.</small>
 							<br/>
-							<img src="./images/Compare-1.png" style="text-align: center;" />
+							<img src="../images/Compare-1.png" style="text-align: center;" />
 						</div>
 						<div style="left:40%;top: 75px;float: right;text-align: left;z-index:-10;width:30%;">
 							<br/>
-							<img src="./images/MC15-2.png"  />
+							<img src="../images/MC15-2.png"  />
 						</div>
 					</section>
 					<section>
@@ -106,7 +105,7 @@
 							The mesh topology in each cube and the vertex positions are decided by manually designed rules. 
 						</small>
 						<br/>
-						<img src="./images/Compare-2.png" />
+						<img src="../images/Compare-2.png" />
 					</section>
 					<section style="text-align: left;">
 						<h2 style="text-align: center;">Solutions</h2>
@@ -132,7 +131,7 @@
 					</section>
 					<section style="text-align: left;">
 						<h2 style="text-align: center;">Templates: From 2D to 3D</h2>
-						<img src="./images/NMC-fig2.png" alt="二维正方形的结构表示" />
+						<img src="../images/NMC-fig2.png" alt="二维正方形的结构表示" />
 						<small>
 							<li>Input:  $ m \times n $ </li>
 							<li>Output:</li>
@@ -142,7 +141,7 @@
 					<section>
 						<h2>Templates: From 2D to 3D</h2>
 						<li style="text-align: left;">Output = Type + Vertices + Edges + Faces </li>
-						<img src="./images/NMC-8.png"/>
+						<img src="../images/NMC-8.png"/>
 					</section>
 					<section>
 						<h2>Marching Cubes Algorithm</h2>
@@ -154,19 +153,19 @@
 								<br>
 								$\Rightarrow m \times n \times k \times (5+51) $
 							</small>
-							<img src="./images/NMC-9.png">
+							<img src="../images/NMC-9.png">
 						</div>
 						<div style="left:40%;top: 75px;float: right;text-align: left;z-index:-10;width:60%;">
-						<img src="./images/NMC-fig3.png" />
+						<img src="../images/NMC-fig3.png" />
 						</div>
 					</section>
 					<section>
 						<h2>NMC Templates</h2>
-						<img src="./images/NMC-37.png" alt="NMC结构" style="max-height: 55vh;" />
+						<img src="../images/NMC-37.png" alt="NMC结构" style="max-height: 55vh;" />
 					</section>
 					<section>
 						<h2>NMC-lite Templates</h2>
-						<img src="./images/NMC-lite.png" alt="NMC-lite结构" style="max-height: 55vh;" />
+						<img src="../images/NMC-lite.png" alt="NMC-lite结构" style="max-height: 55vh;" />
 					</section>
 				</section>
 				<section>
@@ -175,7 +174,7 @@
 					</section>
 					<section>
 						<h2>Data Preparation</h2>
-						<img src="./images/NMC-fig7.jpg" alt="数据集的生成" style="max-height: 55vh;"/>
+						<img src="../images/NMC-fig7.jpg" alt="数据集的生成" style="max-height: 55vh;"/>
 					</section>
 					<section>
 						<h2>Network Related</h2>
@@ -191,10 +190,10 @@
 							</small>
 							<br/>
 							<br/>
-							<img src="./images/NMC-fig8.jpg" alt="在输入是voxel的情况下开启光滑性loss的对比" style="zoom: 30%;" />
+							<img src="../images/NMC-fig8.jpg" alt="在输入是voxel的情况下开启光滑性loss的对比" style="zoom: 30%;" />
 						</div>
 						<div style="left:40%;top: 75px;float: right;text-align: left;z-index:-10;width:45%;">
-							<img src="./images/NMC-4.jpg" alt="深度学习网络结构" style="zoom: 35%;" />
+							<img src="../images/NMC-4.jpg" alt="深度学习网络结构" style="zoom: 35%;" />
 						</div>
 					</section>
 				</section>
@@ -204,23 +203,23 @@
 					</section>
 					<section>
 						<h2>Beamer</h2>
-						<img src="./images/NMC-3.jpg" alt="论文Beamer"/>
+						<img src="../images/NMC-3.jpg" alt="论文Beamer"/>
 					</section>
 					<section>
 						<h2>Smooth Features</h2>
-						<img src="./images/NMC-1.png" alt="在平滑表面的效果" style="max-height: 55vh;"/>
+						<img src="../images/NMC-1.png" alt="在平滑表面的效果" style="max-height: 55vh;"/>
 					</section>
 					<section>
 						<h2>Sharp Features</h2>
-						<img src="./images/NMC-2.png" alt="NMC算法的锐利边缘效果" />
+						<img src="../images/NMC-2.png" alt="NMC算法的锐利边缘效果" />
 					</section>
 					<section>
 						<h2>Noisy Data Input</h2>
-						<img src="./images/NMC-fig14.jpg" alt="噪声数据验证" />
+						<img src="../images/NMC-fig14.jpg" alt="噪声数据验证" />
 					</section>
 					<section>
 						<h2>NMC vs MC33</h2>
-						<img src="./images/NMC-fig11.jpg" alt="MC33与NMC的结果对比"/>
+						<img src="../images/NMC-fig11.jpg" alt="MC33与NMC的结果对比"/>
 					</section>
 				</section>
 				<section>
@@ -236,7 +235,7 @@
 								<li>Loss function of smooth prefers axis-aligned outputs</li>
 							</small></ul>
 						</div>
-						<img src="./images/NMC-5.png" alt="旋转敏感性" />
+						<img src="../images/NMC-5.png" alt="旋转敏感性" />
 					</section>
 					<section>
 						<h2>Issues of NMC</h2>
@@ -244,7 +243,7 @@
 							<li>Cannot reconstruct some topological cases.</li>
 							<li>Self-intersections</li>
 						</div>
-						<img src="./images/NMC-6.png" alt="匹配失败的情况" />
+						<img src="../images/NMC-6.png" alt="匹配失败的情况" />
 					</section>
 					<section>
 						<h2><i style="font-style: italic;">Future</i> Work: NDC</h2>
@@ -261,12 +260,12 @@
 							</small>
 						</div>
 						<div style="left:40%;top: 75px;float: right;text-align: left;z-index:-10;width:55%;">
-							<img src="./images/NDC.png"/>
+							<img src="../images/NDC.png"/>
 						</div>
 					</section>
 					<section>
 						<h2><i style="font-style: italic;">Future</i> Work: NDC</h2>
-						<img src="./images/NDC-1.png" style="max-height: 55vh;"/>
+						<img src="../images/NDC-1.png" style="max-height: 55vh;"/>
 					</section>
 				</section>
 				<section>
