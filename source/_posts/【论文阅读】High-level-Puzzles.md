@@ -6,7 +6,7 @@ cover: false
 mathjax: true
 toc: true
 abbrlink: 202207241234
-categories: 论文
+categories: 论文阅读
 tags:
   - 论文
   - 图形学
