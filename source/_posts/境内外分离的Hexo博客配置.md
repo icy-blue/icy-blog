@@ -60,12 +60,12 @@ password:
 
 另外，之前好像挖了几个坑来着，填填坑——
 
--  使用 GitHub Actions 实现仓库从 GitHub 到 Gitee 的同步：这个Gitee好像自己就可以实现，也省的自己写了
+-  使用 GitHub Actions 实现仓库从 GitHub 到 Gitee 的同步：这个 Gitee 好像自己就可以实现，也省的自己写了
 
--  使用 Gitee Pages：现在Gitee的开源环境还是算了吧，另外Gitee Pages是要身份证核验的
+-  使用 Gitee Pages：现在 Gitee 的开源环境还是算了吧，另外 Gitee Pages 是要身份证核验的
 
 -  做一个合适的负载均衡：境内外的负载均衡可能也算负载均衡吧
--  使用 Lint-md 让博客内容排版更加规范：这个好像可以简单提一下，用的是[llint-md](https://github.com/lint-md/lint-md)的仓库，用起来也非常轻松，在Action部署的时候npm安装好，然后把markdown文件送到参数里（我用了shell里`xargs`的一个方法使得一行就弄完了，不过注意一下当时我设置的时候项目路径有大小写bug所以我用的Windows下的Bash Shell，也许现在bug修了罢）
+-  使用 Lint-md 让博客内容排版更加规范：这个好像可以简单提一下，用的是[llint-md](https://github.com/lint-md/lint-md)的仓库，用起来也非常轻松，在 Action 部署的时候 npm 安装好，然后把 markdown 文件送到参数里（我用了 shell 里`xargs`的一个方法使得一行就弄完了，不过注意一下当时我设置的时候项目路径有大小写 bug 所以我用的 Windows 下的 Bash Shell，也许现在 bug 修了罢）
 
 ```yaml
       - name: Import lint-md
