@@ -10,7 +10,8 @@ categories: 博客
 tags:
   - GitHub Actions
   - 博客
-  - 宝塔
+  - CDN
+  - DNS
 summary: 每次寒暑假，博客总会进行一次技术迭代，2022夏博客又进行了境内外分离的技术升级。
 date: 2022-07-30 00:00:00
 img:
@@ -65,7 +66,7 @@ password:
 -  使用 Gitee Pages：现在Gitee的开源环境还是算了吧，另外Gitee Pages是要身份证核验的
 
 -  做一个合适的负载均衡：境内外的负载均衡可能也算负载均衡吧
--  使用 Lint-md 让博客内容排版更加规范：这个好像可以简单提一下，用的是[llint-md](https://github.com/lint-md/lint-md)的仓库，用起来也非常轻松，在Action部署的时候npm安装好，然后把markdown文件送到参数里（我用了shell里`xargs`的一个方法使得一行就弄完了，不过注意一下当时我设置的时候项目路径有大小写bug所以我用的Windows下的Bash Shell，也许现在bug修了罢）
+-  使用 Lint-md 让博客内容排版更加规范：这个好像可以简单提一下，用的是[llint-md](https://github.com/lint-md/lint-md)的仓库，用起来也非常轻松，在Action部署的时候npm安装好，然后把markdown文件送到参数里（我用了shell里`xargs`的一个方法使得一行就弄完了，不过注意一下当时我设置的时候项目路径有大小写bug所以我用的Windows下的Bash Shell，也许现在bug修了罢），最后别忘了创建提交改回去（要在设置里给Action写权限）
 
 ```yaml
       - name: Import lint-md
@@ -79,3 +80,4 @@ password:
           find ./source/ -name "*.md" | xargs lint-md --fix 
 ```
 
+<img src="../images/2022073005.png" alt="在Setting-Action-General中开启Action的写许可" style="zoom:50%;" />
