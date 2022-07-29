@@ -12,7 +12,7 @@ tags:
   - 博客
   - 宝塔
 summary: 每次寒暑假，博客总会进行一次技术迭代，2022夏博客又进行了境内外分离的技术升级。
-date: 2022-07-30 12:00:00
+date: 2022-07-30 00:00:00
 img:
 coverImg:
 password:
@@ -57,3 +57,25 @@ password:
 -------------------------
 
 对了，刚打算收工，就发现 GitHub 对于 Pages 的更新[GitHub Pages: Custom GitHub Actions Workflows (beta)](https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/)。大概说的是，Pages 的输入可以不是一个分支了，可以直接用 Action 打好的 tar 包去部署，省的像我，先建立一个`icy-blog`仓库，再通过 Action 生成到`icy-blue.github.io`仓库，就可以一步到位啦。看看暑假有没有空做，不行等寒假再搞搞~
+
+另外，之前好像挖了几个坑来着，填填坑——
+
+-  使用 GitHub Actions 实现仓库从 GitHub 到 Gitee 的同步：这个Gitee好像自己就可以实现，也省的自己写了
+
+-  使用 Gitee Pages：现在Gitee的开源环境还是算了吧，另外Gitee Pages是要身份证核验的
+
+-  做一个合适的负载均衡：境内外的负载均衡可能也算负载均衡吧
+-  使用 Lint-md 让博客内容排版更加规范：这个好像可以简单提一下，用的是[llint-md](https://github.com/lint-md/lint-md)的仓库，用起来也非常轻松，在Action部署的时候npm安装好，然后把markdown文件送到参数里（我用了shell里`xargs`的一个方法使得一行就弄完了，不过注意一下当时我设置的时候项目路径有大小写bug所以我用的Windows下的Bash Shell，也许现在bug修了罢）
+
+```yaml
+      - name: Import lint-md
+        run: |
+          npm update npm
+          npm i -g @lint-md/cli
+        
+      - name: Fix format of markdown sources
+        shell: bash
+        run: |
+          find ./source/ -name "*.md" | xargs lint-md --fix 
+```
+
