@@ -108,6 +108,8 @@ oops-sdu.github.io.     3600    IN      CAA     0 issue "letsencrypt.org"
 
 其实，GitHub Pages在配置域名的时候，提起过[对apex域名的解析配置方法](https://docs.github.com/cn/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain)。方法提出填写A记录和AAAA记录（IPv6），就是防止CAA记录被同步转移。其实同步转移的不只是CAA记录，TXT记录和MX记录（用于域名绑定企业邮箱）等记录也会被同步重定向（甚至有时候重定向的优先级更高，忽略域名本身的记录），因此提醒大家在配置@域名时慎重选择CNAME记录。
 
+更新：阿里云和腾讯云的域名解析上，充分考虑到了域名CNAME影响MX和TXT记录的问题，于是他们分别对@主机的解析规则进行了一定的修改，并列出冲突的情况（见[腾讯云冲突规则](https://docs.dnspod.cn/dns/help-type/)，[腾讯云CNAME加速](https://docs.dnspod.cn/dns/dns-resolve-set/)，[阿里云冲突规则](https://help.aliyun.com/document_detail/39787.html?spm=a2c4g.11186623.0.0.6ccac0d2i5SGcq)）。
+
 <img src="../images/2022080202.png" alt="对apex域名的解析配置方法" style="zoom:67%;" />
 
 ## 设置CAA记录
