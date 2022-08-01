@@ -65,7 +65,7 @@ jobs:
 
       - name: Upload Images
         run: |
-          cd source/iamges/
+          cd source/images/
           git init
           git remote add origin git@github.com:icy-blue/images.git
           git add .
