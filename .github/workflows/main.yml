@@ -66,11 +66,12 @@ jobs:
       - name: Upload Images
         run: |
           cd source/images/
+          git config --global init.defaultBranch main
           git init
           git remote add origin git@github.com:icy-blue/images.git
           git add .
           git commit -m "Add images."
-          git push --force
+          git push --force --set-upstream origin main
 
   deploy-blog:
     needs: deploy-images
