@@ -42,8 +42,38 @@ jobs:
           git commit -m "Fix format of markdown sources."
           git push
 
-  deploy-github:
+  deploy-images:
     needs: lint-format
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2.4.0
+
+      - name: Setup Git
+        env:
+          ACTION_DEPLOY_KEY: ${{ secrets.IMAGE_DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 700 ~/.ssh
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git pull
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
+
+      - name: Upload Images
+        run: |
+          cd source/iamges/
+          git init
+          git remote add origin git@github.com:icy-blue/images.git
+          git add .
+          git commit -m "Add images."
+          git push --force
+
+  deploy-blog:
+    needs: deploy-images
     runs-on: ubuntu-latest
 
     steps:
@@ -77,9 +107,7 @@ jobs:
           git pull
           git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
-
-      - name: Clean Images
-        run: rm source/images/ -rf
+          rm source/images/ -rf
 
       - name: Deploy
         run: |
@@ -94,54 +122,3 @@ jobs:
           EOF
           hexo clean
           hexo deploy
- 
-  # deploy-gitee:
-  #   needs: lint-format
-  #   runs-on: ubuntu-latest
-
-  #   steps:
-  #       # 设置服务器时区为东八区 
-  #     - name: Set time zone
-  #       run: sudo timedatectl set-timezone 'Asia/Shanghai'
-
-  #     - name: Checkout source
-  #       uses: actions/checkout@v2.4.0
-
-  #     - name: Setup Node.js
-  #       uses: actions/setup-node@v1
-  #       with:
-  #         node-version: '12'
-
-  #     - name: Setup Hexo
-  #       run: |
-  #         npm install hexo-cli -g
-  #         npm install hexo-deployer-git --save
-  #         npm install
-        
-  #     - name: Setup Git
-  #       env:
-  #         ACTION_DEPLOY_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
-  #       run: |
-  #         mkdir -p ~/.ssh/
-  #         echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
-  #         chmod 700 ~/.ssh
-  #         chmod 600 ~/.ssh/id_rsa
-  #         ssh-keyscan gitee.com >> ~/.ssh/known_hosts
-  #         git pull
-  #         git config --global user.email "i@icys.top"
-  #         git config --global user.name "icy-blue"
-
-  #     - name: Deploy
-  #       run: |
-  #         cat >> _config.yml <<EOF
-
-  #         # 自动部署配置
-  #         deploy:
-  #           type: git
-  #           repo: git@gitee.com:icy-blue/icy-blue.gitee.io.git
-  #           branch: hexo
-
-  #         EOF
-  #         hexo clean
-  #         hexo deploy
-  #         hexo deploy
