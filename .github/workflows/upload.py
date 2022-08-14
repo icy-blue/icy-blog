@@ -39,12 +39,18 @@ files = get_filepath(path, [])
 for file in files:
     file = file.replace('\\', '/')
     print(file)
-    response = client.object_exists(
-        Bucket=bucket,
-        Key=file)
+    response = True
+    for i in range(5):
+        try:
+            response = client.object_exists(
+                Bucket=bucket,
+                Key=file)
+            break
+        except CosClientError or CosServiceError as e:
+            print(e)
     if response:
         continue
-    for i in range(0, 10):
+    for i in range(10):
         try:
             response = client.upload_file(
                 Bucket=bucket,
