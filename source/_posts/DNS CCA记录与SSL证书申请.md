@@ -104,7 +104,7 @@ oops-sdu.github.io.     3600    IN      CAA     0 issuewild "digicert.com"
 oops-sdu.github.io.     3600    IN      CAA     0 issue "letsencrypt.org"
 ```
 
-而根据上面的介绍，网站只允许`digicert.com`申请单域名及泛域名的证书，而`letsencrypt.org`只能申请单域名证书、不能申请泛域名证书。因此使用`letsencrypt.org`同时申请`*.oops-sdu.cn`及`oops-sdu.cn`是会失败的，不过只申请`oops-sdu.cn`会成功。
+而根据上面的介绍，网站只允许`digicert.com`申请单域名及泛域名的证书，而`letsencrypt.org`只能申请单域名证书、不能申请泛域名证书。因此使用`letsencrypt.org`同时申请`*.oops-sdu.cn`及`oops-sdu.cn`是会失败的，不过只申请`oops-sdu.cn`会成功。当然，根据上述第四步，在子域名没有额外设置 CNAME 和 CAA 相关记录的时候，那么我们的子域名也会继承 apex 域名的 CAA 记录，使得子域名下还是只能单网站申请证书，不能申请子域名下的泛域名证书，影响还是蛮大的。同样，这也是意味着，在子域名没有额外设置 CNAME 和 CAA 相关记录的时候，在 apex 域名下的 CAA 限制会影响整个域名，尤其是对于不在 CAA 记录里许可的证书发行商。
 
 其实，GitHub Pages在配置域名的时候，提起过[对apex域名的解析配置方法](https://docs.github.com/cn/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain)。方法提出填写A记录和AAAA记录（IPv6），就是防止CAA记录被同步转移。其实同步转移的不只是CAA记录，TXT记录和MX记录（用于域名绑定企业邮箱）等记录也会被同步重定向（甚至有时候重定向的优先级更高，忽略域名本身的记录），因此提醒大家在配置@域名时慎重选择CNAME记录。
 

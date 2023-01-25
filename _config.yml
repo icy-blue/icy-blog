@@ -11,8 +11,8 @@ subtitle:
   backSpeed: 50 # 删除速度
   details: 一只咕咕了许久的小屋
   sub: 
-    - gugugu since 2020.01
-    - 理路上事,毋惮其难而稍为退步,一退步便远隔千山。
+    - 期待与你一起共同进步
+    - 理路上事，毋惮其难而稍为退步，一退步便远隔千山。
 # 网站简介
 description: icy的个人主页
 # 网站关键词，便于 SEO 搜索
@@ -91,7 +91,7 @@ background:
 # 配置是否在菜单栏中显示 fork me on github 的图标，默认为 true，你可以修改为你的仓库地址.
 githubLink:
   enable: true                                   # 是否开启
-  url: https://github.com/icy-blue/icy-blue.github.io  # GitHub 仓库地址
+  url: https://github.com/icy-blue/icy-blog  # GitHub 仓库地址
   title: Fork                                 # 显示文字
 
 # 首页封面轮播图的相关配置.
