@@ -131,14 +131,14 @@ export default function Component(props) {
 
 > An effect function must not return anything besides a function, which is used for clean-up. It looks like you wrote useEffect(async () => ...) or returned a Promise. Instead, write the async function inside your effect and call it immediately
 
-这是因为 `useEffect`是需要返回值来解决组件销毁/重建时的副作用清除的，而我们加上 `async` 关键字则会让这个函数返回一个 `Promise`，所以应该建一个普通的函数，然后在函数里面创建带有`async`关键字的函数，并立即调用。
+这是因为 `useEffect`是需要返回值来解决组件销毁/重建时的副作用清除的，而我们加上 `async` 关键字则会让这个函数返回一个 `Promise`，所以应该建一个普通的函数，然后在函数里面创建带有`async`关键字的函数，并立即调用。详见 [hooks学习之useEffect](https://juejin.cn/post/7029117054233870349)。
 
 ```jsx
 export default function Component(props) {
   ...
   useEffect(() => {(async () => {
     ...
-  })(), [page]); // fetch data only when page changes
+  })()}, [page]); // fetch data only when page changes
   ...
 }
 ```
