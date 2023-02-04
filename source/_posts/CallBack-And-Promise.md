@@ -71,7 +71,7 @@ export default function Component(props) {
 
 ## Promise 的意义
 
-我感觉[理解JavaScript Promise](https://zhuanlan.zhihu.com/p/26523836)这篇文章写的还是不错的，使用 Promise 构造一个函数，这个 Promise 就可以管理这个函数的状态，以便后续任务在这个函数执行完毕后使用。所以现代的 fetch 函数都尽可能返回一个 Promise，以便我们使用 Promise.then() 这个方法以便对数据进行处理。
+我感觉[理解JavaScript Promise](https://zhuanlan.zhihu.com/p/26523836)这篇文章写的还是不错的，使用 `Promise` 构造一个函数，这个 `Promise` 就可以管理这个函数的状态，以便后续任务在这个函数执行完毕后使用。所以现代的 fetch 函数都尽可能返回一个 `Promise`，以便我们使用 `Promise.then()` 这个方法以便对数据进行处理。
 
 所以上面的代码或许可以改成这个样子：
 
@@ -100,7 +100,7 @@ export default function Component(props) {
 
 与上一节一样，先挂出一个链接用于学习：[【学习笔记】深入理解async/await](https://www.cnblogs.com/youma/p/10475214.html)。
 
-Await 的出现带来了什么呢？Await 使得获取的结果直接提取了出来，不再需要额外套一层函数用于执行。这样函数嵌套会更加少，而且也可以像同步的函数一样处理数据了。于是我们的代码会变得更加清楚，不会再像原来一样晦涩难懂。
+`await` 的出现带来了什么呢？`await` 使得获取的结果直接提取了出来，不再需要额外套一层函数用于执行。这样函数嵌套会更加少，而且也可以像同步的函数一样处理数据了。于是我们的代码会变得更加清楚，不会再像原来一样晦涩难懂。
 
 于是我们的代码可能变成这样子，如果想分开处理异常可以套两个 `try-catch`块：
 
@@ -123,11 +123,11 @@ export default function Component(props) {
 }
 ```
 
-但是这样 Eslint 组件是会报 warning 的——
+但是这样 `Eslint` 组件是会报警告的——
 
 > ESLint: Effect callbacks are synchronous to prevent race conditions. Put the async function inside:
 
-如果版本早于 React 16，可能会直接报 errer ——
+如果版本早于 React 16，可能会直接报错误——
 
 > An effect function must not return anything besides a function, which is used for clean-up. It looks like you wrote useEffect(async () => ...) or returned a Promise. Instead, write the async function inside your effect and call it immediately
 
@@ -145,7 +145,7 @@ export default function Component(props) {
 
 ## 并行的数据请求
 
-我们的请求可能没有前置要求，那么异步的数据获取我们怎么进行处理呢？一般来说，我们对于数据请求，难免存在请求失败的情况，所以常见的策略是哪部分到了先加载哪部分，报错的部分再进行重试或请求备用数据源，以免用户等待太着急。于是我们就可以建造多个`useEffect`函数，分别进行数据请求和处理，加上 React 的关注点分离策略，我们就可以实现部分数据的渲染。
+我们的请求可能没有前置要求，那么异步的数据获取我们怎么进行处理呢？一般来说，我们对于数据请求，难免存在请求失败的情况，所以常见的策略是哪部分到了先加载哪部分，报错的部分再进行重试或请求备用数据源，以免用户等待太着急。于是我们就可以建造多个`useEffect`函数，分别进行数据请求和处理，加上 `React` 的关注点分离策略，我们就可以实现部分数据的渲染。
 
 ```jsx
 export default function Component(props) {
