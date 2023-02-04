@@ -158,10 +158,10 @@ export default function Component(props) {
     fetchSomeData("urlB", {params: "Some Params"}, {config: "Some Configurations"}).then((data) => setDataB(data));
   }, [page]); 
   return (
-  <div>
+  <> // equals to <React.Fragment>
     { dataA && <A data=dataA/> }
     { dataB && <B data=dataB/> }
-  </div>
+  </>
  );
 }
 ```
