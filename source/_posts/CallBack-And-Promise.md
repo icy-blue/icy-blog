@@ -49,10 +49,10 @@ export default function Component(props) {
   }, [page]); // fetch data only when page changes
   if (renderData === null) return null;
   return (
-  <> // equals to <React.Fragment>
+  <> {/* equals to <React.Fragment> */}
     <Dialog someStates=dialogState/>
     <Others data=RenderData/>
-  </>
+  </> {/* equals to </React.Fragment> */}
  );
 }
 ```
@@ -158,10 +158,10 @@ export default function Component(props) {
     fetchSomeData("urlB", {params: "Some Params"}, {config: "Some Configurations"}).then((data) => setDataB(data));
   }, [page]); 
   return (
-  <> // equals to <React.Fragment>
+  <> {/* equals to <React.Fragment> */}
     { dataA && <A data=dataA/> }
     { dataB && <B data=dataB/> }
-  </>
+  </> {/* equals to </React.Fragment> */}
  );
 }
 ```
@@ -182,10 +182,10 @@ export default function Component(props) {
     }).catch((error) => someFunction(error));
   }, [page]); 
   return (
-  <> // equals to <React.Fragment>
+  <> {/* equals to <React.Fragment> */}
     { dataA && <A data=dataA/> }
     { dataB && <B data=dataB/> }
- 	</>
+ 	</> {/* equals to </React.Fragment> */}
  );
 }
 ```
