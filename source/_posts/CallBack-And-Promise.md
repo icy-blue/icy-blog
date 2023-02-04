@@ -49,10 +49,10 @@ export default function Component(props) {
   }, [page]); // fetch data only when page changes
   if (renderData === null) return null;
   return (
-  <div>
+  <> // equals to <React.Fragment>
     <Dialog someStates=dialogState/>
     <Others data=RenderData/>
- 	</div>
+  </>
  );
 }
 ```
@@ -161,7 +161,7 @@ export default function Component(props) {
   <div>
     { dataA && <A data=dataA/> }
     { dataB && <B data=dataB/> }
- 	</div>
+  </div>
  );
 }
 ```
@@ -182,10 +182,10 @@ export default function Component(props) {
     }).catch((error) => someFunction(error));
   }, [page]); 
   return (
-  <div>
+  <> // equals to <React.Fragment>
     { dataA && <A data=dataA/> }
     { dataB && <B data=dataB/> }
- 	</div>
+ 	</>
  );
 }
 ```
