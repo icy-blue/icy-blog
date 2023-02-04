@@ -125,6 +125,13 @@ password:
 - [【推荐】Ubuntu 安装多版本 python 共存](https://blog.csdn.net/HD243608836/article/details/100162535)
 - [Understanding the /etc/passwd File](https://www.geeksforgeeks.org/understanding-the-etc-passwd-file/)
 
+## Conda 类
+
+- [清华源更换](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)
+- [创建 python 环境](https://zhuanlan.zhihu.com/p/94744929)
+- [更换 GCC 版本](https://www.zhihu.com/question/56272908/answer/1471772171)
+- [使用 yaml 创建虚拟环境](https://blog.csdn.net/weixin_42486623/article/details/121554408)
+
 ## 常见问题
 
 - [Linux Shell 管道详解](http://c.biancheng.net/view/3131.html)
