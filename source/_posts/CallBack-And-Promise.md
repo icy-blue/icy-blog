@@ -22,7 +22,7 @@ password:
 
 ## 引入
 
-说起 React，我印象最深刻的是，在 React 中，数据是[向下流动](https://zh-hans.reactjs.org/docs/state-and-lifecycle.html#the-data-flows-down)的（[react为什么是单向数据流](https://www.php.cn/website-design-ask-493282.html)）——越高层级的组件，获得着越多的数据，而低层级组件数据的获取和更新，大多都通过[组件属性传递](https://zh-hans.reactjs.org/docs/components-and-props.html)以及[回调函数](https://juejin.cn/post/7065555069889937415)方式得到。这就意味着，高层组件刷新会同时刷新低层组件，而低层组件刷新往往不会带动高层组件刷新，于是更多的状态和逻辑会出现在比较高层级的组件里，在 React 中叫做[状态提升](https://zh-hans.reactjs.org/docs/lifting-state-up.html) 。例如对话框的打开与关闭更应该是对话框组件的属性，而不是对话框组件的状态——对话框的操作往往与高层数据相关，如果把状态放在低层级，则很难把当前的状态和数据与高层级组件交互。
+说起 React，我印象最深刻的是，在 React 中，数据是[向下流动](https://zh-hans.reactjs.org/docs/state-and-lifecycle.html#the-data-flows-down)的（[react 为什么是单向数据流](https://www.php.cn/website-design-ask-493282.html)）——越高层级的组件，获得着越多的数据，而低层级组件数据的获取和更新，大多都通过[组件属性传递](https://zh-hans.reactjs.org/docs/components-and-props.html)以及[回调函数](https://juejin.cn/post/7065555069889937415)方式得到。这就意味着，高层组件刷新会同时刷新低层组件，而低层组件刷新往往不会带动高层组件刷新，于是更多的状态和逻辑会出现在比较高层级的组件里，在 React 中叫做[状态提升](https://zh-hans.reactjs.org/docs/lifting-state-up.html) 。例如对话框的打开与关闭更应该是对话框组件的属性，而不是对话框组件的状态——对话框的操作往往与高层数据相关，如果把状态放在低层级，则很难把当前的状态和数据与高层级组件交互。
 
 在这种数据流的模式下，为了使得基本组件“动起来”，高层级组件里总会有大大小小的许多状态，以便控制基本组件的开/关、显示/隐藏等等。此外，除了控制基本组件的状态以外，高层级组件本身可能还承担着数据通信的功能，例如我们本次提到的异步请求和发送数据。在 React 中，状态`state`的更新会使得组件重新进行渲染（见[State & 生命周期](https://react.docschina.org/docs/state-and-lifecycle.html)），有的时候我们只希望重新渲染这个组件的一部分组件（例如刚才所说的对话框），而有的时候我们希望重新请求数据（数据同步、表格翻页）全部刷新，于是我们通常会使用 [useEffect 钩子](https://zh-hans.reactjs.org/docs/hooks-effect.html)对一些刷新操作添加限定，仅仅在某些变量修改的时候，才会重新执行该部分代码逻辑（在 React 官方文档中叫做[关注点分离](https://zh-hans.reactjs.org/docs/hooks-effect.html#tip-use-multiple-effects-to-separate-concerns)）。
 
@@ -71,7 +71,7 @@ export default function Component(props) {
 
 ## Promise 的意义
 
-我感觉[理解JavaScript Promise](https://zhuanlan.zhihu.com/p/26523836)这篇文章写的还是不错的，使用 `Promise` 构造一个函数，这个 `Promise` 就可以管理这个函数的状态，以便后续任务在这个函数执行完毕后使用。所以现代的 fetch 函数都尽可能返回一个 `Promise`，以便我们使用 `Promise.then()` 这个方法以便对数据进行处理。
+我感觉[理解 JavaScript Promise](https://zhuanlan.zhihu.com/p/26523836)这篇文章写的还是不错的，使用 `Promise` 构造一个函数，这个 `Promise` 就可以管理这个函数的状态，以便后续任务在这个函数执行完毕后使用。所以现代的 fetch 函数都尽可能返回一个 `Promise`，以便我们使用 `Promise.then()` 这个方法以便对数据进行处理。
 
 所以上面的代码或许可以改成这个样子：
 
@@ -98,7 +98,7 @@ export default function Component(props) {
 
 ## Async 和 await
 
-与上一节一样，先挂出一个链接用于学习：[【学习笔记】深入理解async/await](https://www.cnblogs.com/youma/p/10475214.html)。
+与上一节一样，先挂出一个链接用于学习：[【学习笔记】深入理解 async/await](https://www.cnblogs.com/youma/p/10475214.html)。
 
 `await` 的出现带来了什么呢？`await` 使得获取的结果直接提取了出来，不再需要额外套一层函数用于执行。这样函数嵌套会更加少，而且也可以像同步的函数一样处理数据了。于是我们的代码会变得更加清楚，不会再像原来一样晦涩难懂。
 
