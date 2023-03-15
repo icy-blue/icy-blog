@@ -38,7 +38,7 @@ path = 'images/'
 files = get_filepath(path, [])
 for file in files:
     file = file.replace('\\', '/')
-    print(file)
+    # print(file)
     response = True
     for i in range(5):
         try:

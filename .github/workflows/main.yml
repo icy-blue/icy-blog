@@ -27,7 +27,7 @@ jobs:
       - name: Fix format of markdown sources
         shell: bash
         run: |
-          find ./source/ -name "*.md" | xargs lint-md --fix 
+          find ./source/ -name "*.md" | xargs lint-md --fix >> $GITHUB_OUTPUT
           
       - name: Commit the fix
         run: |
@@ -48,7 +48,7 @@ jobs:
           ACTION_DEPLOY_KEY: ${{ secrets.COS_DEPLOY_KEYS }}
         run: |
           pip install -U argparse cos-python-sdk-v5
-          python ./.github/workflows/upload.py $ACTION_DEPLOY_KEY
+          python ./.github/workflows/upload.py $ACTION_DEPLOY_KEY >> $GITHUB_OUTPUT
           
       - name: Setup Git
         env:
