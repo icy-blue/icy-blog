@@ -11,12 +11,12 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3.3.0
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '18'
+          node-version: '16'
           
       - name: Import lint-md
         run: |
@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3.3.0
 
       - name: Deploy COS
         env:
@@ -83,12 +83,12 @@ jobs:
         run: sudo timedatectl set-timezone 'Asia/Shanghai'
 
       - name: Checkout source
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3.3.0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: '18'
+          node-version: '16'
 
       - name: Setup Hexo
         run: |
