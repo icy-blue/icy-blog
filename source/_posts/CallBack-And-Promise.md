@@ -50,8 +50,8 @@ export default function Component(props) {
   if (renderData === null) return null;
   return (
   <> {/* equals to <React.Fragment> */}
-    <Dialog someStates=dialogState/>
-    <Others data=RenderData/>
+    <Dialog someStates={dialogState}/>
+    <Others data={RenderData}/>
   </> {/* equals to </React.Fragment> */}
  );
 }
@@ -159,8 +159,8 @@ export default function Component(props) {
   }, [page]); 
   return (
   <> {/* equals to <React.Fragment> */}
-    { dataA && <A data=dataA/> }
-    { dataB && <B data=dataB/> }
+    { dataA && <A data={dataA}/> }
+    { dataB && <B data={dataB}/> }
   </> {/* equals to </React.Fragment> */}
  );
 }
@@ -183,8 +183,8 @@ export default function Component(props) {
   }, [page]); 
   return (
   <> {/* equals to <React.Fragment> */}
-    { dataA && <A data=dataA/> }
-    { dataB && <B data=dataB/> }
+    { dataA && <A data={dataA}/> }
+    { dataB && <B data={dataB}/> }
  	</> {/* equals to </React.Fragment> */}
  );
 }
