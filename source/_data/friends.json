@@ -167,5 +167,11 @@
     "url": "https://kernelbin.cn/",
     "introduction": "好菜啊",
     "title": "主页"
+  },{
+    "name": "F0rest",
+    "avatar": "/images/avatar/forest.jpeg",
+    "url": "https://silence-forest-sf.github.io/",
+    "introduction": "code,hack,fun",
+    "title": "F0rest's forest"
   }
 ]
