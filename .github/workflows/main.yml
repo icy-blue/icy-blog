@@ -27,7 +27,7 @@ jobs:
       - name: Fix format of markdown sources
         shell: bash
         run: |
-          find ./source/ -name "*.md" | xargs lint-md --fix >> "$GITHUB_OUTPUT"
+          find ./source/ -name "*.md" | xargs lint-md --fix
           
       - name: Commit the fix
         run: |
