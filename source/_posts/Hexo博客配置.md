@@ -39,7 +39,7 @@ Hexo 是目前来说非常普遍使用的博客了，在 GitHub 上有许多主�
 
 GitHub Pages 可以满足绝大多数海外用户的使用需求，因为 Pages 对于一个简单的非商业项目来说配额已经十分充足——
 
->GitHub Pages sites are subject to the following usage limits:
+> GitHub Pages sites are subject to the following usage limits:
 >
 >- GitHub Pages source repositories have a recommended limit of 1GB. 
 >- Published GitHub Pages sites may be no larger than 1 GB.
