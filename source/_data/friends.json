@@ -82,7 +82,9 @@
     "avatar": "/images/avatar/zjrua.jpg",
     "url": "https://zjrua.com/",
     "introduction": "放弃幻想，准备斗争",
-    "title": "Zjrua的神奇摆烂屋"
+    "title": "Zjrua的神奇摆烂屋",
+    "visible": false,
+    "reason": "域名过期"
   },{
     "name": "wjyyy",
     "avatar": "/images/avatar/wjyyy.jpg",
@@ -92,7 +94,7 @@
   },{
     "name": "panda2134",
     "avatar": "/images/avatar/panda2134.jpg",
-    "url": "https://panda2134.site/",
+    "url": "https://blog.panda2134.site/",
     "introduction": "Stay hungry, stay stupid.",
     "title": "主页"
   },{
@@ -112,7 +114,9 @@
     "avatar": "/images/avatar/robin.jpg",
     "url": "https://rikugen.in/",
     "introduction": "菜鸡 Robin 的博客",
-    "title": "退思录"
+    "title": "退思录",
+    "visible": false,
+    "reason": "网站无法打开"
   },{
     "name": "Shino",
     "avatar": "/images/avatar/shino.jpg",
@@ -154,13 +158,17 @@
     "avatar": "/images/avatar/xiaosheng.jpg",
     "url": "http://xiaosheng.space/",
     "introduction": "欧豆豆の小破站",
-    "title": "Blog"
+    "title": "Blog",
+    "visible": false,
+    "reason": "网站无法打开"
   },{
     "name": "著律科技",
     "avatar": "/images/avatar/zhulv.png",
     "url": "https://www.zhulvtech.com",
     "introduction": "助力每一位律师，科技让工作更简单～",
-    "title": "官网"
+    "title": "官网",
+    "visible": "warning",
+    "reason": "网站 SSL 证书过期"
   },{
     "name": "kernel.bin",
     "avatar": "/images/avatar/kernelbin.jpg",
