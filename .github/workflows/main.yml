@@ -101,12 +101,11 @@ jobs:
           ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_KEY }}
         run: |
           mkdir -p ~/.ssh/
-          rm ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
+          rm -f ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
           echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_ed25519
           chmod 700 ~/.ssh
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git pull
           git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
           rm source/images/ -rf
@@ -153,12 +152,11 @@ jobs:
           ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_KEY }}
         run: |
           mkdir -p ~/.ssh/
-          rm ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
+          rm -f ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
           echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_ed25519
           chmod 700 ~/.ssh
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git pull
+          ssh-keyscan gitee.com >> ~/.ssh/known_hosts
           git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
           rm source/images/ -rf
