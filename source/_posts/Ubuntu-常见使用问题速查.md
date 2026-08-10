@@ -153,7 +153,7 @@ password:
 - [Linux 给用户添加 sudo 权限](https://www.cnblogs.com/henrylinux/p/9746835.html)
 - [Linux 添加环境变量的五种方法](https://blog.csdn.net/u011262253/article/details/86083351)
 - [执行 sudo 命令时 command not found 的解决办法](https://www.jianshu.com/p/049f13e55840)
-- [Ubuntu 开机自动登录(命令行模式)](https://blog.csdn.net/weixin_43522563/article/details/91446518)
+- [Ubuntu 开机自动登录（命令行模式）](https://blog.csdn.net/weixin_43522563/article/details/91446518)
   - 如果是有图形界面，在`Setting->User accounts`里面`enable`就行了
 - 从 Windows 下解压压缩包或复制可执行文件后，在 Linux 无法正常运行或运行报错
   - 一般来说是缺少可执行权限 x 权限，可以尝试`sudo chmod +x -R xxxx/`（如果希望递归添加），`sudo chmod +x xxxx`（仅文件或仅文件夹），成功后会让文件（夹）变绿，具体见下条帮助
